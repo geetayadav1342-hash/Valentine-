@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Prabha ❤️</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Comic Sans MS', cursive;
+      background: linear-gradient(135deg, #ff758c, #ff7eb3);
+      overflow: hidden;
+      color: white;
+      text-align: center;
+    }
+
+    .box {
+      background: rgba(0,0,0,0.3);
+      padding: 40px;
+      border-radius: 25px;
+      box-shadow: 0 0 25px rgba(0,0,0,0.4);
+      animation: pulse 2s infinite alternate;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      100% { transform: scale(1.03); }
+    }
+
+    h1 { font-size: 3rem; margin-bottom: 10px; }
+    h2 { font-size: 2rem; margin: 20px 0; }
+    p { font-size: 1.2rem; line-height: 1.5; }
+
+    button {
+      padding: 15px 30px;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      margin: 15px;
+      transition: 0.3s;
+    }
+
+    #yes { background: #00ff99; }
+    #yes:hover { transform: scale(1.1); }
+
+    #no { background: #ff4d4d; position: absolute; }
+  </style>
+</head>
+<body>
+
+  <div class="box">
+    <h1>Prabha ❤️</h1>
+    <p>
+      Tum meri zindagi ki wo movie ho jiska interval bhi skip nahi karta 😌<br>
+      Aur ek sawaal hai...
+    </p>
+    <h2>Will you be my Valentine? 💖</h2>
+    <button id="yes" onclick="yesClicked()">YES 💕</button>
+    <button id="no" onmouseover="moveNo()">NO 😜</button>
+  </div>
+
+  <script>
+    function yesClicked() {
+      document.body.innerHTML = `
+        <div style="text-align:center; color:white; font-family: 'Comic Sans MS', cursive;">
+          <h1>YAYYYYY 🥰</h1>
+          <h2>Prabha, you just made me the happiest 💖</h2>
+          <p>Ye Valentine sirf tumhare naam 💫✨</p>
+          <p>🎶💞</p>
+        </div>
+      `;
+    }
+
+    function moveNo() {
+      const noBtn = document.getElementById("no");
+      const x = Math.random() * (window.innerWidth - 100);
+      const y = Math.random() * (window.innerHeight - 50);
+      noBtn.style.left = x + "px";
+      noBtn.style.top = y + "px";
+    }
+  </script>
+
+</body>
+</html>
